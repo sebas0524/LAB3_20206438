@@ -40,11 +40,15 @@ public class MainActivity extends AppCompatActivity {
         btnComenzar = findViewById(R.id.btnComenzar);
 
 
-        String[] categorias = {"Cultura General", "Libros", "Películas", "Música", "Computación", "Matemática", "Deportes", "Historia"};
-        String[] dificultades = {"fácil", "medio", "difícil"};
+        String[] dificultades = {"Dificultad","fácil", "medio", "difícil"};
+        String[] categorias = {"Categoría", "Cultura General", "Libros", "Películas", "Música", "Computación", "Matemática", "Deportes", "Historia"};
+        ArrayAdapter<String> adapterCategoria = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, categorias);
 
-        spinnerCategoria.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, categorias));
-        spinnerDificultad.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, dificultades));
+        spinnerCategoria.setAdapter(adapterCategoria);
+
+        ArrayAdapter<String> adapterDificultad = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, dificultades);
+        spinnerDificultad.setAdapter(adapterDificultad);
+
 
 
         btnComprobarConexion.setOnClickListener(v -> {
@@ -99,10 +103,14 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean validarEntradas() {
         String cantidadStr = editTextCantidad.getText().toString().trim();
+        String categoriaSeleccionada = spinnerCategoria.getSelectedItem() != null ? spinnerCategoria.getSelectedItem().toString() : "";
+        String dificultadSeleccionada = spinnerDificultad.getSelectedItem() != null ? spinnerDificultad.getSelectedItem().toString() : "";
 
-        if (spinnerCategoria.getSelectedItem() == null || spinnerDificultad.getSelectedItem() == null ||
+        if (categoriaSeleccionada.equals("Selecciona tu categoría") ||
+                dificultadSeleccionada.equals("Selecciona tu categoría") ||
                 cantidadStr.isEmpty()) {
-            Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "Completa todos los campos correctamente", Toast.LENGTH_SHORT).show();
             return false;
         }
 
