@@ -1,144 +1,149 @@
-<!-- archivo: res/layout/activity_main.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3EBF6"
-    tools:context=".MainActivity">
+    android:background="#B3E5FC"
+    android:padding="16dp">
 
-    <!-- Fondo azul superior -->
     <LinearLayout
-        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="#B9E4F8"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp">
+        android:gravity="center_horizontal">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="¡Bienvenido a TeleTrivia!"
-            android:textColor="#2E2E2E"
-            android:textSize="24sp"
+            android:textSize="26sp"
             android:textStyle="bold"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="#212121"
+            android:padding="16dp" />
 
         <TextView
-            android:id="@+id/subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="La app diseñada para testear tu\nconocimiento y retar a tus amigos!\nA continuación, elija los parámetros de juego"
-            android:textColor="#333"
-            android:gravity="center"
             android:textAlignment="center"
+            android:textColor="#424242"
             android:textSize="14sp"
-            android:layout_marginTop="8dp"/>
-    </LinearLayout>
+            android:gravity="center"
+            android:paddingBottom="24dp" />
 
-    <!-- Contenedor blanco con bordes redondeados -->
-    <LinearLayout
-        android:id="@+id/formulario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header"
-        android:layout_marginTop="-40dp"
-        android:layout_margin="16dp"
-        android:orientation="vertical"
-        android:background="#EAF7F2"
-        android:elevation="4dp"
-        android:padding="16dp"
-        android:clipToPadding="false"
-        android:backgroundTint="#EAF7F2"
-        android:layout_alignParentBottom="false"
-        android:layout_centerHorizontal="true">
-
-        <!-- Categoría -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Categoría:"
-            android:textStyle="bold"
-            android:textColor="#000"/>
-
-        <Spinner
-            android:id="@+id/spinnerCategoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#D0EADF"/>
-
-        <!-- Cantidad -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cantidad:"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp"
-            android:textColor="#000"/>
-
-        <EditText
-            android:id="@+id/editCantidad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:hint="# Preguntas"
-            android:backgroundTint="#D0EADF"/>
-
-        <!-- Dificultad -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dificultad:"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp"
-            android:textColor="#000"/>
-
-        <Spinner
-            android:id="@+id/spinnerDificultad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#D0EADF"/>
-
-        <!-- Botones -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E8F5E9"
+            android:padding="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="4dp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Categoría:"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <Spinner
+                    android:id="@+id/spinnerCategoria"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#C8E6C9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Cantidad:"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/editTextCantidad"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:hint="# Preguntas"
+                    android:inputType="number"
+                    android:backgroundTint="#C8E6C9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Dificultad:"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <Spinner
+                    android:id="@+id/spinnerDificultad"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#C8E6C9" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="24dp">
+            android:layout_marginTop="12dp">
 
-            <!-- Botón Comprobar Conexión -->
             <Button
-                android:id="@+id/btnConexion"
+                android:id="@+id/btnComprobarConexion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="  Comprobar\n  Conexión"
+                android:text="⚠️ Comprobar\nConexión"
+                android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#191970"
-                android:drawableStart="@android:drawable/ic_dialog_alert"
-                android:drawablePadding="8dp"
-                android:padding="10dp"
-                android:textSize="12sp"
-                android:minHeight="48dp"/>
+                android:backgroundTint="#1A237E"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp" />
 
-            <!-- Botón Comenzar -->
             <Button
                 android:id="@+id/btnComenzar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="  Comenzar"
+                android:text="▶️ Comenzar"
                 android:enabled="false"
-                android:textColor="#FFFFFF"
-                android:layout_marginStart="16dp"
-                android:backgroundTint="#999999"
-                android:drawableStart="@android:drawable/ic_media_play"
-                android:drawablePadding="8dp"
-                android:padding="10dp"
-                android:textSize="14sp"
-                android:minHeight="48dp"/>
+                android:textAllCaps="false"
+                android:layout_marginStart="12dp"
+                android:backgroundTint="#BDBDBD"
+                android:textColor="#424242" />
         </LinearLayout>
-    </LinearLayout>
 
-</RelativeLayout>
+    </LinearLayout>
+</ScrollView>
