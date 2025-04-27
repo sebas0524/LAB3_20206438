@@ -99,7 +99,7 @@
         android:id="@+id/btnVolverJugar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="🔁 Volver a Jugar"
+        android:text="Volver a Jugar"
         android:backgroundTint="#1A237E"
         android:textColor="#FFFFFF"
         android:padding="12dp" />
