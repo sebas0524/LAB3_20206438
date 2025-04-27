@@ -26,29 +26,73 @@
         android:elevation="4dp"
         android:layout_marginBottom="30dp">
 
-        <TextView
-            android:id="@+id/txtCorrectas"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="✔️ Correctas: 0"
-            android:textSize="18sp"
-            android:textColor="#388E3C" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
 
-        <TextView
-            android:id="@+id/txtIncorrectas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="❌ Incorrectas: 0"
-            android:textSize="18sp"
-            android:textColor="#D32F2F" />
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:backgroundTint="#388E3C"
+                android:background="@drawable/circle_shape"
+                android:layout_marginEnd="8dp"/>
 
-        <TextView
-            android:id="@+id/txtNoRespondidas"
+            <TextView
+                android:id="@+id/txtCorrectas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Correctas: 0"
+                android:textSize="18sp"
+                android:textColor="#388E3C" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="⚪ No respondidas: 0"
-            android:textSize="18sp"
-            android:textColor="#757575" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:backgroundTint="#D32F2F"
+                android:background="@drawable/circle_shape"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/txtIncorrectas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incorrectas: 0"
+                android:textSize="18sp"
+                android:textColor="#D32F2F" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:backgroundTint="#757575"
+                android:background="@drawable/circle_shape"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/txtNoRespondidas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No respondidas: 0"
+                android:textSize="18sp"
+                android:textColor="#757575" />
+        </LinearLayout>
     </LinearLayout>
 
     <Button

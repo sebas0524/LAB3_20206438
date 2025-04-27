@@ -33,9 +33,9 @@ public class ResultadosActivity extends AppCompatActivity {
         int incorrectas = getIntent().getIntExtra("incorrectas", 0);
         int noRespondidas = getIntent().getIntExtra("no_respondidas", 0);
 
-        txtCorrectas.setText("✔️ Correctas: " + correctas);
-        txtIncorrectas.setText("❌ Incorrectas: " + incorrectas);
-        txtNoRespondidas.setText("⚪ No respondidas: " + noRespondidas);
+        txtCorrectas.setText("Correctas: " + correctas);
+        txtIncorrectas.setText("Incorrectas: " + incorrectas);
+        txtNoRespondidas.setText("No respondidas: " + noRespondidas);
 
         btnVolver.setOnClickListener(v -> {
             Intent intent = new Intent(ResultadosActivity.this, MainActivity.class);
